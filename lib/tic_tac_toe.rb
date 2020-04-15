@@ -9,8 +9,12 @@ class TicTacToe
     [0,4,8],
     [2,4,6]]
   
-  def initialize(board = nil)
-    @board = board || Array.new(9, " ")
+  # def initialize(board = nil)
+  #   @board = board || Array.new(9, " ")
+  # end 
+  
+   def initialize
+    @board = Array.new(9, " ")
   end 
   
   def display_board
@@ -20,6 +24,8 @@ class TicTacToe
     puts "-----------"
     puts " #{@board[6]} | #{@board[7]} | #{@board[8]} "
   end
+  # game = TicTacToe.new 
+  # game.display_board
   
   def input_to_index(user_input)
     user_input.to_i - 1 
