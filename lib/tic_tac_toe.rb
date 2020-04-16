@@ -54,4 +54,7 @@ class TicTacToe
       "O"
     end 
   end 
+  
+  def turn
+  end 
 end 
