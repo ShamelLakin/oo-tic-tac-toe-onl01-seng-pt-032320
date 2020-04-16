@@ -56,5 +56,7 @@ class TicTacToe
   end 
   
   def turn
+    puts "Please move to a position between 1-9:"
+    get
   end 
 end 
