@@ -25,7 +25,7 @@ class TicTacToe
     puts " #{@board[6]} | #{@board[7]} | #{@board[8]} "
   end
   # game = TicTacToe.new 
-  # game.display_board
+  # game.display_board note: game is the reciever which always on the left of dot.
   
   def input_to_index(user_input)
     user_input.to_i - 1 
@@ -34,4 +34,24 @@ class TicTacToe
   def move(index, token)
     @board[index] = token
   end
+  
+  def position_taken?(index_v)
+    ((@board[index_v] == "X") || (@board[index_v] == "O"))
+  end
+  
+  def valid_move?(position)
+    position.between?(0,8) && !position_taken?(position)
+  end 
+  
+  def turn_count
+    @board.count {|token| token == "X" || token == "O"}
+  end
+  
+  def current_player
+    if turn_count % 2 == 0 
+      "X"
+    else 
+      "O"
+    end 
+  end 
 end 
